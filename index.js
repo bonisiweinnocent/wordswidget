@@ -6,26 +6,32 @@ function word() {
         return words
     }
 
-    // let showHowmMany = () =>{
-    //     words = words.filter(over => over >4)
+    let showHowmManyWords = () => 
+      words[0].split(' ').length
+        
 
-    //     let how = words.length
-    //     console.log(how);
-    //     return how
-    // }
-   
-
-
+    let longerThan = over4  => {
+        for (let i = 0; i < words.length; i++) {
+            const element = words[i];
+        }
 
 
-
+    }
 
 
 
-return {
-    sentence,
-    showHowmMany
-}
+
+
+
+
+
+
+
+    return {
+        sentence,
+        showHowmManyWords,
+        longerThan
+    }
 
 
 

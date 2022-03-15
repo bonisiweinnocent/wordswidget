@@ -6,10 +6,10 @@ let showCountElement = document.querySelector(".showCount")
 
 function enterSentence() {
 
-    let wordTake =inputFieldElement.value
+    let wordTake = inputFieldElement.value
     if (inputFieldElement.value != '') {
-        displaySentenceElement.innerHTML =wordInstance.sentence(wordTake)
-        showCountElement.innerHTML = wordInstance.showHowmMany()
+        displaySentenceElement.innerHTML = wordInstance.sentence(wordTake)
+        showCountElement.innerHTML = ( wordInstance.showHowmManyWords() + "  " +"words found")
     }
 
 }
