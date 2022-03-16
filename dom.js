@@ -10,9 +10,9 @@ function enterSentence() {
     if (wordTake!= '') {
         displaySentenceElement.innerHTML = wordInstance.sentence(wordTake)
         showCountElement.innerHTML = ( wordInstance.showHowmManyWords() + "  " +"word(s) found")
-        wordInstance.longerThan(wordTake)
+        wordInstance.longerThan()
+        
     }
- 
 }
 
 btnElement.addEventListener('click', enterSentence)

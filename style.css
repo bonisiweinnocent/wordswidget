@@ -10,12 +10,15 @@ body{
   text-align: center;
 }
 
-.displaySentence{
+/* .displaySentence{
     color: green;
 }
- 
+  */
 .inputField{
   border-radius: 10%;
 text-align: center;
 border-color: black;
+}
+.high{
+  background-color: yellow;
 }
