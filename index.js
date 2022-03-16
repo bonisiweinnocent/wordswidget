@@ -1,28 +1,27 @@
 function word() {
-    let words = []
+    let words = ''
 
     let sentence = (phrases) => {
-        words.push(phrases)
+        words = phrases
         return words
     }
 
-    let showHowmManyWords = () => 
-      words[0].split(' ').length
-        
+    let showHowmManyWords = () =>
+        words.split(' ').length
 
-    let longerThan = over4  => {
+
+    let longerThan = over => {
+        words.split(' ')
+        console.log(words + "uuuu");
+
         for (let i = 0; i < words.length; i++) {
             const element = words[i];
+
+
+
+            return element
         }
-
-
     }
-
-
-
-
-
-
 
 
 
@@ -32,10 +31,6 @@ function word() {
         showHowmManyWords,
         longerThan
     }
-
-
-
-
 
 
 
