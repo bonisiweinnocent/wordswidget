@@ -13,12 +13,25 @@
     <div class="container">
         <h3>Words widget</h3>
         <div class="word">
-            <input type="text" class="inputField"  placeholder="Write here">
+            <input type="text" class="inputField" placeholder="Write here">
             <button class="btn">Enter</button>
 
-            <div class="displaySentence"></div>
+            <div class="displaySentence"></div><br>
+            
+            <div class="longest"></div>
+
+            <br>
 
             <div class="showCount"></div>
+            <br>
+
+            <div class="checkbox">
+                <!-- <input type="checkbox" class="short"  name="short" value="short"> -->
+                <!-- <label for="short"> Highlight the longest word in a sentence</label><br> -->
+
+                <input type="checkbox" onclick="widget();" id="hide" value="hide">
+                <label for="hide">Hide words with less than 5 charecters</label>
+            </div>
 
         </div>
     </div>
