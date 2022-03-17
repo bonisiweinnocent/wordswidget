@@ -1,4 +1,6 @@
-function word() {
+function word(storage) {
+    let emptyArr = storage || [];
+    
     let words = ''
 
 
@@ -7,6 +9,9 @@ function word() {
         words = phrases
         let newWord = words.split(' ')
         let highlight = ''
+
+
+        
         for (let i = 0; i < newWord.length; i++) {
             if (newWord[i].length > 4) {
                 highlight += `<mark> ${newWord[i]}  </mark>`

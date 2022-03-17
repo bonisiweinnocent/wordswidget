@@ -1,18 +1,31 @@
 let inputFieldElement = document.querySelector(".inputField")
 let displaySentenceElement = document.querySelector(".displaySentence")
 let btnElement = document.querySelector(".btn")
-let wordInstance = word()
+
 let showCountElement = document.querySelector(".showCount")
 let longestElement = document.querySelector(".longest")
-// let shortElement = document.querySelector('.short')
-// let hideElement = document.querySelector('.hide')
+
+let wordInstance = word()
+
+
 
 function enterSentence() {
 
     let wordTake = inputFieldElement.value
+
+    // if (!localStorage["param"]) {
+    
+    //     wordTake = localStorage.setItem("param", JSON.stringify(wordTake))
+    //     wordTake= JSON.parse(localStorage.getItem("param"))
+    // }else {
+      
+    //     wordTake = JSON.parse(localStorage.getItem("param"))
+    // }
+
+
     if (wordTake != '') {
         displaySentenceElement.innerHTML = wordInstance.sentence(wordTake)
-        showCountElement.innerHTML = (wordInstance.showHowmManyWords() + "  " + "word(s) found")
+        showCountElement.innerHTML = ("Count:"  + " " + wordInstance.showHowmManyWords())
 
 
     }
