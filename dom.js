@@ -33,7 +33,7 @@ function enterSentence() {
     if (wordTake != '') {
         displaySentenceElement.innerHTML = wordInstance.sentence(wordTake)
         showCountElement.innerHTML = ("Count:" + " " + wordInstance.showHowmManyWords())
-
+        longestElement.innerHTML = ("Longest word/s: " + " " + wordInstance.highlightLongest())
 
     }
 }
@@ -47,13 +47,13 @@ let widget = () => {
     if (check) {
 
         displaySentenceElement.innerHTML = wordInstance.longerThanFive()
-        longestElement.innerHTML = (wordInstance.highlightLongest() + " " + "is the longest word")
+        
     }else if(!check){
         let inTake = inputFieldElement.value
         longestElement.innerHTML =" "
         
         displaySentenceElement.innerHTML = wordInstance.sentence(inTake)
-       
-
     }
+    
+
 }

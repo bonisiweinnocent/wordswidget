@@ -6,6 +6,7 @@ function word(storage) {
 
 
     let sentence = (phrases) => {
+        
         words = phrases
         let newWord = words.split(' ')
         let highlight = ''
@@ -19,6 +20,8 @@ function word(storage) {
                 highlight += newWord[i] + ' '
             }
             localStorage.setItem("param", JSON.stringify(highlight))
+
+            
         }
         return highlight
     }
@@ -30,6 +33,7 @@ function word(storage) {
     let longerThanFive = () => {
         let keyWord = words.split(' ')
         let contain = ' '
+        let str = ' '
         for (let i = 0; i < keyWord.length; i++) {
             if (keyWord[i].length > 5) {
                 contain += `   ${keyWord[i]}  `
@@ -50,7 +54,7 @@ function word(storage) {
 
         console.log(splitted[0]);
 
-        long += `<mark> ${splitted[0]}  </mark>`
+        long += `<mark class = "green"> ${splitted[0]}  </mark>`
         return long
     }
 
