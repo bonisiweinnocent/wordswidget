@@ -18,6 +18,7 @@ function word(storage) {
             } else {
                 highlight += newWord[i] + ' '
             }
+            localStorage.setItem("param", JSON.stringify(highlight))
         }
         return highlight
     }
