@@ -8,6 +8,7 @@ body{
 .container{
   align-items: center;
   text-align: center;
+  
 }
 
 
@@ -16,9 +17,8 @@ body{
 text-align: center;
 border-color: black;
 }
-.high{
-  background-color: yellow;
-}
+
 .green{
-  background-color: green;
+ background-color: darkgray;
+
 }

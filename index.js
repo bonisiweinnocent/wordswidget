@@ -1,18 +1,9 @@
-function word(storage) {
-    let emptyArr = storage || [];
-    
+function word() {
     let words = ''
-
-
-
     let sentence = (phrases) => {
-        
         words = phrases
         let newWord = words.split(' ')
         let highlight = ''
-
-
-        
         for (let i = 0; i < newWord.length; i++) {
             if (newWord[i].length > 4) {
                 highlight += `<mark> ${newWord[i]}  </mark>`
@@ -20,43 +11,43 @@ function word(storage) {
                 highlight += newWord[i] + ' '
             }
             localStorage.setItem("param", JSON.stringify(highlight))
-
-            
         }
         return highlight
     }
-
     let showHowmManyWords = () =>
         words.split(' ').length
-
-
     let longerThanFive = () => {
         let keyWord = words.split(' ')
         let contain = ' '
-        let str = ' '
+       
         for (let i = 0; i < keyWord.length; i++) {
             if (keyWord[i].length > 5) {
                 contain += `   ${keyWord[i]}  `
             }
 
+            console.log(keyWord + "Ths is  a consolo");
+
         }
-        // highlightLongest()
         return contain
     }
     let highlightLongest = () => {
+        let take = words.split(' ')
+        let arr = ' '
+        let longWord = []
+        for (let i = 0; i < take.length; i++) {
+            const element = take[i];
+            if (element.length > 5) {
+                longWord.push(element)
 
-        let v = words.split(" ")
-        let long = ''
-        let splitted = v.sort((strA, strB) => {
-            return strB.length - strA.length;
+                console.log(longWord + " 65656656");
 
-        })
-
-        console.log(splitted[0]);
-
-        long += `<mark class = "green"> ${splitted[0]}  </mark>`
-        return long
+            }
+            arr += `<mark> ${longWord}  </mark>`
+        }
+        return longWord
     }
+
+
 
 
 
@@ -66,7 +57,4 @@ function word(storage) {
         longerThanFive,
         highlightLongest
     }
-
-
-
 }
