@@ -1,7 +1,10 @@
 function word() {
+    let sentences = []
     let words = ''
-    let sentence = (phrases) => {
-        words = phrases
+
+    let sentence = (phrase) => {
+        words = phrase
+        sentences.push(phrase)
         let newWord = words.split(' ')
         let highlight = ''
         for (let i = 0; i < newWord.length; i++) {
@@ -10,23 +13,22 @@ function word() {
             } else {
                 highlight += newWord[i] + ' '
             }
-            localStorage.setItem("param", JSON.stringify(highlight))
+            localStorage.setItem("sentence", JSON.stringify(sentences))
         }
         return highlight
     }
-    let showHowmManyWords = () =>
-        words.split(' ').length
+    let showHowmManyWords = () => words.split(' ').length
+
+    let getSentences = () => sentences
+
     let longerThanFive = () => {
         let keyWord = words.split(' ')
         let contain = ' '
-       
+
         for (let i = 0; i < keyWord.length; i++) {
             if (keyWord[i].length > 5) {
                 contain += `   ${keyWord[i]}  `
             }
-
-            console.log(keyWord + "Ths is  a consolo");
-
         }
         return contain
     }
@@ -38,23 +40,18 @@ function word() {
             const element = take[i];
             if (element.length > 5) {
                 longWord.push(element)
-
-                console.log(longWord + " 65656656");
-
             }
             arr += `<mark> ${longWord}  </mark>`
         }
         return longWord
     }
 
-
-
-
-
     return {
         sentence,
         showHowmManyWords,
         longerThanFive,
-        highlightLongest
+        highlightLongest,
+        getSentences
+
     }
 }

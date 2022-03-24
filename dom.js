@@ -4,19 +4,40 @@ let btnElement = document.querySelector(".btn")
 let lastBtnElement = document.querySelector(".lastBtn")
 let showCountElement = document.querySelector(".showCount")
 let longestElement = document.querySelector(".longest")
+let sentences = document.querySelector('.sentences')
+
+let wordInstance = word()
 
 lastBtnElement.addEventListener('click', () => {
-    let showHistory = inputFieldElement.value
-    let areaElement = document.querySelector(".area")
-    if (!localStorage["param"]) {
-        showHistory = localStorage.setItem("param", JSON.stringify(showHistory))
-        showHistory = JSON.parse(localStorage.getItem("param"))
-    } else {
-        showHistory = JSON.parse(localStorage.getItem("param"))
-    }
-    areaElement.innerHTML = showHistory
+
+    alert(wordInstance.getSentences().length)
+    let sentencesHtmlList =
+
+        wordInstance
+            .getSentences()
+            .forEach(sentence => {
+                let elem = document.createElement('li');
+                elem.innerHTML = sentence;
+                console.log(sentence + "thi is it");
+                sentences.appendChild(elem)
+            })
+
+    
+
+
 })
-let wordInstance = word()
+// sentencesHtmlList  = localStorage["sentence"]
+if (!localStorage["sentence"]) {
+
+    let element = localStorage.setItem("sentence", JSON.stringify(sentences))
+
+    element = JSON.parse(localStorage.getItem("sentence"))
+
+   
+} else {
+    element = JSON.parse(localStorage.getItem("sentence"))
+}
+
 function enterSentence() {
     let wordTake = inputFieldElement.value
     if (wordTake != '') {
@@ -25,7 +46,6 @@ function enterSentence() {
         longestElement.innerHTML = ("Longest word/s: " + " " + `<mark class="green">${wordInstance.highlightLongest()}</mark>`)
     }
 }
-
 btnElement.addEventListener('click', enterSentence)
 let widget = () => {
     let check = document.querySelector("#hide").checked;
