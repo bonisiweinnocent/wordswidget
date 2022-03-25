@@ -1,7 +1,17 @@
 function word() {
-    let sentences = []
-    let words = ''
 
+    let sentences = (!localStorage['sentence'])
+
+        ? localStorage.setItem("sentence", JSON.stringify([]))
+        : JSON.parse(localStorage.getItem("sentence"));
+
+    console.log(sentences + " what is inside");
+
+    let words = ''
+    // let addNewSentence = () => {
+    //     let newSentence = sentence.shift()
+    //     return newSentence
+    // }
     let sentence = (phrase) => {
         words = phrase
         sentences.push(phrase)
@@ -13,10 +23,12 @@ function word() {
             } else {
                 highlight += newWord[i] + ' '
             }
-            localStorage.setItem("sentence", JSON.stringify(sentences))
         }
+        // addNewSentence()
+        localStorage.setItem("sentence", JSON.stringify(sentences))
         return highlight
     }
+
     let showHowmManyWords = () => words.split(' ').length
 
     let getSentences = () => sentences
@@ -32,6 +44,8 @@ function word() {
         }
         return contain
     }
+
+
     let highlightLongest = () => {
         let take = words.split(' ')
         let arr = ' '
@@ -51,7 +65,9 @@ function word() {
         showHowmManyWords,
         longerThanFive,
         highlightLongest,
-        getSentences
+        getSentences,
+        // addNewSentence
+
 
     }
 }

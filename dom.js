@@ -10,7 +10,7 @@ let wordInstance = word()
 
 lastBtnElement.addEventListener('click', () => {
 
-    alert(wordInstance.getSentences().length)
+    // alert(wordInstance.getSentences().length)
     let sentencesHtmlList =
 
         wordInstance
@@ -18,25 +18,17 @@ lastBtnElement.addEventListener('click', () => {
             .forEach(sentence => {
                 let elem = document.createElement('li');
                 elem.innerHTML = sentence;
-                console.log(sentence + "thi is it");
                 sentences.appendChild(elem)
             })
-
-    
-
-
 })
-// sentencesHtmlList  = localStorage["sentence"]
-if (!localStorage["sentence"]) {
-
-    let element = localStorage.setItem("sentence", JSON.stringify(sentences))
-
-    element = JSON.parse(localStorage.getItem("sentence"))
-
-   
-} else {
-    element = JSON.parse(localStorage.getItem("sentence"))
-}
+// .addEventListener('keyup', (e) => {
+//     let storedWords = []
+//     if (e.target.value) {
+//         storedWords =1
+      
+//     }
+  
+// })
 
 function enterSentence() {
     let wordTake = inputFieldElement.value
@@ -47,6 +39,7 @@ function enterSentence() {
     }
 }
 btnElement.addEventListener('click', enterSentence)
+
 let widget = () => {
     let check = document.querySelector("#hide").checked;
     if (check) {

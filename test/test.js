@@ -9,6 +9,7 @@ describe('The words-widget factory function', function () {
 
 
     });
+    
     it('should show word count', function () {
         var theApp = word();
        
