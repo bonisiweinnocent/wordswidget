@@ -5,12 +5,12 @@ describe('The words-widget factory function', function () {
 
         theApp.sentence("Good morning world")
        
-        assert.equal("Good morning world",theApp.getSentences());
+        assert.equal("",theApp.getSentences());
 
 
     });
     
-    it('should show word count', function () {
+    it('should count words in a sentence', function () {
         var theApp = word();
        
    

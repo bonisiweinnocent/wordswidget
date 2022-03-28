@@ -5,8 +5,12 @@ let lastBtnElement = document.querySelector(".lastBtn")
 let showCountElement = document.querySelector(".showCount")
 let longestElement = document.querySelector(".longest")
 let sentences = document.querySelector('.sentences')
+let list = document.querySelector('ul')
+let average = document.querySelector('.avg')
 
 let wordInstance = word()
+
+
 
 lastBtnElement.addEventListener('click', () => {
 
@@ -21,22 +25,23 @@ lastBtnElement.addEventListener('click', () => {
                 sentences.appendChild(elem)
             })
 })
-// .addEventListener('keyup', (e) => {
-//     let storedWords = []
-//     if (e.target.value) {
-//         storedWords =1
-      
-//     }
-  
-// })
+
 
 function enterSentence() {
     let wordTake = inputFieldElement.value
+if(wordTake ===' '){
+    displaySentenceElement.innerHTML = "Please type in a sentence"
+}
+else
     if (wordTake != '') {
         displaySentenceElement.innerHTML = wordInstance.sentence(wordTake)
         showCountElement.innerHTML = ("Count:" + " " + wordInstance.showHowmManyWords())
+        
+        average.innerHTML =parseInt(wordInstance.average())
+        console.log(wordInstance.average());
         longestElement.innerHTML = ("Longest word/s: " + " " + `<mark class="green">${wordInstance.highlightLongest()}</mark>`)
     }
+    
 }
 btnElement.addEventListener('click', enterSentence)
 
@@ -51,3 +56,8 @@ let widget = () => {
         displaySentenceElement.innerHTML = wordInstance.sentence(inTake)
     }
 }
+list.addEventListener('click', (e) => {
+    let showSentenceAgain = e.target.innerHTML
+    displaySentenceElement.innerHTML = wordInstance.sentence(showSentenceAgain)
+    
+})
